@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunhong He · About Me</title>
+<style>
+  :root{
+    --deep-blue:#1F4E79;
+    --deep-blue-dark:#163A5B;
+    --cream:#FAF7F0;
+    --white:#FFFFFF;
+    --text:#2B2B2B;
+    --muted:#6B6B6B;
+    --border:#E5E0D5;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    background-color:var(--cream);
+    color:var(--text);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  /* 顶部 */
+  header{
+    background-color:var(--deep-blue);
+    color:var(--white);
+    padding:64px 0 56px;
+  }
+  header .inner{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .avatar{
+    width:88px;
+    height:88px;
+    border-radius:50%;
+    background-color:var(--cream);
+    color:var(--deep-blue);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:36px;
+    font-weight:700;
+    flex-shrink:0;
+    box-shadow:0 4px 14px rgba(0,0,0,.18);
+    overflow:hidden;
+  }
+  .avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  header h1{
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:1px;
+  }
+  header .subtitle{
+    font-size:16px;
+    opacity:.92;
+    margin-top:6px;
+    border-left:3px solid rgba(255,255,255,.5);
+    padding-left:12px;
+  }
+  /* 通用区块 */
+  section{
+    padding:56px 0;
+  }
+  section h2{
+    font-size:26px;
+    color:var(--deep-blue);
+    margin-bottom:24px;
+    position:relative;
+    padding-bottom:14px;
+    font-weight:700;
+  }
+  section h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:56px;
+    height:3px;
+    background-color:var(--deep-blue);
+    border-radius:3px;
+  }
+  /* 简介 */
+  .intro p{
+    font-size:17px;
+    color:var(--muted);
+    max-width:720px;
+    margin-bottom:16px;
+  }
+  .intro .highlight{
+    color:var(--deep-blue);
+    font-weight:600;
+  }
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:24px;
+  }
+  .tag{
+    background-color:var(--white);
+    border:1px solid var(--border);
+    color:var(--deep-blue);
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:14px;
+  }
+  /* 卡片网格 */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+  }
+  .card{
+    background-color:var(--white);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:28px 24px;
+    transition:transform .2s ease, box-shadow .2s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 28px rgba(31,78,121,.14);
+  }
+  .card h3{
+    font-size:19px;
+    color:var(--deep-blue);
+    margin-bottom:10px;
+    font-weight:700;
+    line-height:1.4;
+  }
+  .card p, .card li{
+    font-size:15px;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+  .card ul{
+    padding-left:20px;
+  }
+  /* 链接区块 */
+  .link-item a{
+    color:var(--deep-blue);
+    text-decoration:none;
+    border-bottom:1px dashed var(--deep-blue);
+  }
+  .link-item a:hover{
+    border-bottom-style:solid;
+  }
+  /* 联系方式 */
+  .contact{
+    background-color:var(--deep-blue);
+    color:var(--white);
+    padding:56px 0;
+  }
+  .contact h2{
+    color:var(--white);
+  }
+  .contact h2::after{
+    background-color:var(--cream);
+  }
+  .contact p.intro-line{
+    color:rgba(255,255,255,.9);
+    max-width:600px;
+    margin-bottom:28px;
+  }
+  footer{
+    background-color:var(--deep-blue-dark);
+    color:rgba(255,255,255,.75);
+    text-align:center;
+    padding:20px 24px;
+    font-size:13px;
+    letter-spacing:1px;
+  }
+  /* 响应式 */
+  @media (max-width:820px){
+    .grid{
+      grid-template-columns:1fr;
+    }
+    header .inner{
+      justify-content:center;
+      text-align:center;
+    }
+    header .subtitle{
+      border-left:none;
+      padding-left:0;
+    }
+    header{
+      padding:48px 0;
+    }
+    section{
+      padding:44px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container inner">
+      <div class="avatar">
+        <!-- 你可以把图片替换为你的头像图片链接 -->
+        <img alt="avatar" src="https://p3-flow-image-sign.byteimg.com/tos-cn-i-a9rns2rl98/300413013394404894a01f0042404311~tplv-a9rns2rl98-image.image">
+      </div>
+      <div>
+        <h1>Kunhong He <span style="font-weight:normal;font-size:22px;">(Alfred)</span></h1>
+        <p class="subtitle">he/him | Master Candidate, School of Economics, Fudan University</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="container">
+      <h2>About me</h2>
+      <p>My name is Kunhong He. Alfred (my English name) is also acceptable. I am studying Corporate Finance, Green Finance and ESG, pursuing a Master’s degree in the Department of Insurance, School of Economics, Fudan University. Based in Shanghai, P.R.China.</p>
+      <p>This is my profile, which includes my educational background, competition awards, professional certificates and professional experience. The profile is designed to give visitors a thorough understanding of my background.</p>
+      <p><em>Good morning, and in case I don’t see you, good afternoon, good evening, and good night!</em></p>
+      <div class="tags">
+        <span class="tag">Corporate Finance</span>
+        <span class="tag">Green Finance</span>
+        <span class="tag">ESG</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+    <div class="container">
+      <h2>My Characteristics</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Multitasker</h3>
+          <p>Skilled in time management, I am capable of handling diverse tasks efficiently.</p>
+        </div>
+        <div class="card">
+          <h3>Ambitious</h3>
+          <p>I aspire to be a leading financier, committed to employing finance for the wellbeing of society and the public.</p>
+        </div>
+        <div class="card">
+          <h3>Empathy</h3>
+          <p>I possess empathy for people around me and am attuned to their emotional states.</p>
+        </div>
+        <div class="card">
+          <h3>Leadership</h3>
+          <p>I frequently assume leadership responsibilities in tasks I engage in.</p>
+        </div>
+        <div class="card">
+          <h3>Result‑Oriented</h3>
+          <p>While I appreciate the process, results remain my higher priority.</p>
+        </div>
+        <div class="card">
+          <h3>Rational</h3>
+          <p>I exhibit traits of a rational agent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <h2>Relevant Links</h2>
+      <div class="link-item">
+        <p>1. <a href="#">劈波斩浪再前进 踔厉风行谱新篇</a></p>
+        <p>2. <a href="#">辽大师生在首届全国大学生红色金融创新创业大赛斩获佳绩！</a></p>
+      </div>
+      <p style="margin-top:20px;font-size:14px;color:var(--muted);">Site last updated 2026‑08‑02 | <a href="#">Sitemap</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Kunhong He (Alfred)
+  </footer>
+</body>
+</html>
