@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kunhong He · About Me</title>
+<title>何坤洪 · 个人主页</title>
 <style>
   :root{
     --deep-blue:#1F4E79;
@@ -14,7 +14,9 @@
     --muted:#6B6B6B;
     --border:#E5E0D5;
   }
+
   *{margin:0;padding:0;box-sizing:border-box;}
+
   body{
     font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
     background-color:var(--cream);
@@ -22,11 +24,13 @@
     line-height:1.75;
     -webkit-font-smoothing:antialiased;
   }
+
   .container{
     max-width:960px;
     margin:0 auto;
     padding:0 24px;
   }
+
   /* 顶部 */
   header{
     background-color:var(--deep-blue);
@@ -52,17 +56,11 @@
     font-weight:700;
     flex-shrink:0;
     box-shadow:0 4px 14px rgba(0,0,0,.18);
-    overflow:hidden;
-  }
-  .avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
   }
   header h1{
     font-size:34px;
     font-weight:700;
-    letter-spacing:1px;
+    letter-spacing:2px;
   }
   header .subtitle{
     font-size:16px;
@@ -71,6 +69,7 @@
     border-left:3px solid rgba(255,255,255,.5);
     padding-left:12px;
   }
+
   /* 通用区块 */
   section{
     padding:56px 0;
@@ -93,6 +92,7 @@
     background-color:var(--deep-blue);
     border-radius:3px;
   }
+
   /* 简介 */
   .intro p{
     font-size:17px;
@@ -118,49 +118,169 @@
     border-radius:20px;
     font-size:14px;
   }
-  /* 卡片网格 */
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-  }
-  .card{
+
+  /* 经历条目（教育 / 实习 / 项目） */
+  .entry{
     background-color:var(--white);
     border:1px solid var(--border);
     border-radius:14px;
-    padding:28px 24px;
-    transition:transform .2s ease, box-shadow .2s ease;
+    padding:26px 28px;
+    margin-bottom:22px;
+  }
+  .entry:last-child{
+    margin-bottom:0;
+  }
+  .entry .top{
     display:flex;
-    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
   }
-  .card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 12px 28px rgba(31,78,121,.14);
-  }
-  .card h3{
-    font-size:19px;
+  .entry h3{
+    font-size:20px;
     color:var(--deep-blue);
-    margin-bottom:10px;
     font-weight:700;
     line-height:1.4;
   }
-  .card p, .card li{
+  .entry .role{
+    font-size:15px;
+    color:var(--muted);
+    margin-top:2px;
+    font-weight:500;
+  }
+  .entry .date{
+    font-size:14px;
+    color:var(--deep-blue);
+    background-color:var(--cream);
+    border-radius:6px;
+    padding:6px 12px;
+    font-weight:500;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .entry ul{
+    list-style:none;
+    margin-top:6px;
+  }
+  .entry ul li{
     font-size:15px;
     color:var(--muted);
     margin-bottom:8px;
-  }
-  .card ul{
     padding-left:20px;
+    position:relative;
   }
-  /* 链接区块 */
-  .link-item a{
+  .entry ul li::before{
+    content:"";
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background-color:var(--deep-blue);
+  }
+  .entry ul li:last-child{
+    margin-bottom:0;
+  }
+  .entry .course{
+    display:inline-block;
+    font-size:13px;
     color:var(--deep-blue);
-    text-decoration:none;
-    border-bottom:1px dashed var(--deep-blue);
+    background-color:var(--cream);
+    border-radius:6px;
+    padding:6px 12px;
+    font-weight:500;
+    margin-top:4px;
   }
-  .link-item a:hover{
-    border-bottom-style:solid;
+
+  /* 竞赛表格 */
+  .table-wrap{
+    background-color:var(--white);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
   }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:15px;
+  }
+  thead th{
+    background-color:var(--deep-blue);
+    color:var(--white);
+    text-align:left;
+    padding:14px 18px;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:1px;
+  }
+  tbody td{
+    padding:14px 18px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    vertical-align:top;
+  }
+  tbody tr:hover{
+    background-color:var(--cream);
+  }
+  td .badge{
+    display:inline-block;
+    font-size:13px;
+    padding:3px 12px;
+    border-radius:14px;
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .badge.national{
+    background-color:#E8F0F8;
+    color:var(--deep-blue);
+  }
+  .badge.province{
+    background-color:#F0EBE0;
+    color:#8A6D3B;
+  }
+  td.name{
+    color:var(--text);
+    font-weight:500;
+  }
+
+  /* 技能 */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .skill-card{
+    background-color:var(--white);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px 24px;
+  }
+  .skill-card .icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    background-color:var(--deep-blue);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    margin-bottom:16px;
+  }
+  .skill-card h3{
+    font-size:17px;
+    color:var(--deep-blue);
+    margin-bottom:12px;
+    font-weight:700;
+  }
+  .skill-card p{
+    font-size:14px;
+    color:var(--muted);
+  }
+
   /* 联系方式 */
   .contact{
     background-color:var(--deep-blue);
@@ -178,6 +298,35 @@
     max-width:600px;
     margin-bottom:28px;
   }
+  .contact-items{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .contact-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background-color:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    padding:14px 20px;
+    border-radius:10px;
+    font-size:15px;
+  }
+  .contact-item .label{
+    opacity:.85;
+  }
+  .contact-item a{
+    color:var(--white);
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1px dashed rgba(255,255,255,.5);
+    word-break:break-all;
+  }
+  .contact-item a:hover{
+    border-bottom-style:solid;
+  }
+
   footer{
     background-color:var(--deep-blue-dark);
     color:rgba(255,255,255,.75);
@@ -186,9 +335,10 @@
     font-size:13px;
     letter-spacing:1px;
   }
+
   /* 响应式 */
   @media (max-width:820px){
-    .grid{
+    .skills-grid{
       grid-template-columns:1fr;
     }
     header .inner{
@@ -205,82 +355,224 @@
     section{
       padding:44px 0;
     }
+    .entry .top{
+      flex-direction:column;
+    }
+    .table-wrap{
+      overflow-x:auto;
+    }
+    table{
+      min-width:560px;
+    }
   }
 </style>
 </head>
 <body>
+
   <header>
     <div class="container inner">
-      <div class="avatar">
-        <!-- 你可以把图片替换为你的头像图片链接 -->
-        <img alt="avatar" src="https://raw.githubusercontent.com/Alfred-meijiu/Alfred-meijiu.github.io/main/images/profile%20photo.jpg"
-      </div>
+      <div class="avatar">何</div>
       <div>
-        <h1>Kunhong He <span style="font-weight:normal;font-size:22px;">(Alfred)</span></h1>
-        <p class="subtitle">he/him | Master Candidate, School of Economics, Fudan University</p>
+        <h1>何坤洪</h1>
+        <p class="subtitle">复旦大学保险专硕在读 · 精算建模与数据分析</p>
       </div>
     </div>
   </header>
 
   <section class="intro">
     <div class="container">
-      <h2>About me</h2>
-      <p>My name is Kunhong He. Alfred (my English name) is also acceptable. I am studying Corporate Finance, Green Finance and ESG, pursuing a Master’s degree in the Department of Insurance, School of Economics, Fudan University. Based in Shanghai, P.R.China.</p>
-      <p>This is my profile, which includes my educational background, competition awards, professional certificates and professional experience. The profile is designed to give visitors a thorough understanding of my background.</p>
-      <p><em>Good morning, and in case I don’t see you, good afternoon, good evening, and good night!</em></p>
+      <h2>简介</h2>
+      <p>你好，我是<strong class="highlight">何坤洪</strong>，复旦大学保险专业硕士在读，本科毕业于辽宁大学金融学专业（GPA <strong class="highlight">3.90/4</strong>，专业排名第 1）。我对<strong class="highlight">精算建模、人工智能与数据分析、保险财务分析</strong>等方向有浓厚兴趣，希望把金融理论与数据方法结合起来，做出可验证、可落地的研究。</p>
+      <p>本科期间我获得国家级奖学金与一等奖学金，担任辽宁大学四川老乡会会长，参与一项基金课题，并累计斩获 3 项国家级、5 项省级赛事奖项。以下是我的教育、实习与项目经历。</p>
       <div class="tags">
-        <span class="tag">Corporate Finance</span>
-        <span class="tag">Green Finance</span>
-        <span class="tag">ESG</span>
+        <span class="tag">精算建模</span>
+        <span class="tag">数据分析</span>
+        <span class="tag">机器学习</span>
+        <span class="tag">金融研究</span>
+        <span class="tag">计量方法</span>
       </div>
+    </div>
+  </section>
+
+  <section class="education">
+    <div class="container">
+      <h2>教育背景</h2>
+
+      <div class="entry">
+        <div class="top">
+          <div>
+            <h3>复旦大学</h3>
+            <p class="role">硕士 · 保险专硕</p>
+          </div>
+          <span class="date">2026/09 - 2028/07</span>
+        </div>
+        <ul>
+          <li>主修精算建模、人工智能与数据分析、保险财务分析与管理等课程。</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="top">
+          <div>
+            <h3>辽宁大学</h3>
+            <p class="role">学士 · 金融学</p>
+          </div>
+          <span class="date">2022/09 - 2026/07</span>
+        </div>
+        <ul>
+          <li>GPA 3.8973/4（排名 1/117）；国家级奖学金、一等奖学金、优秀团员。</li>
+          <li>辽宁大学四川老乡会会长，参与一项基金课题，获得 3 项国家级赛事奖项、5 项省级赛事奖项。</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="experience">
+    <div class="container">
+      <h2>实习经历</h2>
+
+      <div class="entry">
+        <div class="top">
+          <div>
+            <h3>东方财富证券</h3>
+            <p class="role">汽车组实习生（二级卖方）</p>
+          </div>
+          <span class="date">2026/07 - 2026/09</span>
+        </div>
+        <ul>
+          <li>辅助带教跟踪汽车零部件、液冷、AIDC 赛道，整理行业新闻与个股会议纪要（德昌股份、保隆科技），撰写行业周观点。</li>
+          <li>参与拓普集团、潍柴动力个股研究及研报撰写，收集并预测潍柴动力燃气轮机远期出货数据。</li>
+          <li>运用自上而下与自下而上相结合的研究方法，拆分拓普集团核心客户业务量价数据，通过多维度数据勾稽核对盈利预测，更新拓普集团相关数据库。</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
   <section class="projects">
     <div class="container">
-      <h2>My Characteristics</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Multitasker</h3>
-          <p>Skilled in time management, I am capable of handling diverse tasks efficiently.</p>
+      <h2>项目经历</h2>
+
+      <div class="entry">
+        <div class="top">
+          <div>
+            <h3>《低碳城市试点下 ESG 评级促进企业绿色转型的实证研究》</h3>
+            <p class="role">第一届红色金融创新创业大赛 · 负责人</p>
+          </div>
+          <span class="date">2024/12 - 2025/04</span>
         </div>
-        <div class="card">
-          <h3>Ambitious</h3>
-          <p>I aspire to be a leading financier, committed to employing finance for the wellbeing of society and the public.</p>
-        </div>
-        <div class="card">
-          <h3>Empathy</h3>
-          <p>I possess empathy for people around me and am attuned to their emotional states.</p>
-        </div>
-        <div class="card">
-          <h3>Leadership</h3>
-          <p>I frequently assume leadership responsibilities in tasks I engage in.</p>
-        </div>
-        <div class="card">
-          <h3>Result‑Oriented</h3>
-          <p>While I appreciate the process, results remain my higher priority.</p>
-        </div>
-        <div class="card">
-          <h3>Rational</h3>
-          <p>I exhibit traits of a rational agent.</p>
-        </div>
+        <ul>
+          <li>作为负责人，负责与指导老师沟通交流，统筹论文行文思路并撰写、修改全文。</li>
+          <li>研究结合多时点双重差分与随机森林、梯度推进机等机器学习方法，论证低碳城市建设对 ESG 的影响。</li>
+          <li>采用熵权法 TOPSIS 构建企业绿色转型指数，最终获得<strong>国家级二等奖</strong>。</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="competitions">
+    <div class="container">
+      <h2>竞赛汇总</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>竞赛名称</th>
+              <th>获奖等级</th>
+              <th>获奖级别</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024年12月</td>
+              <td class="name">第十六届全国大学生数学竞赛（非数学B类）</td>
+              <td>一等奖</td>
+              <td><span class="badge national">国家级</span></td>
+            </tr>
+            <tr>
+              <td>2025年04月</td>
+              <td class="name">第一届大学生红色金融创新创业大赛</td>
+              <td>二等奖</td>
+              <td><span class="badge national">国家级</span></td>
+            </tr>
+            <tr>
+              <td>2025年01月</td>
+              <td class="name">2024年亚太地区大学生数学建模竞赛</td>
+              <td>三等奖</td>
+              <td><span class="badge national">国家级</span></td>
+            </tr>
+            <tr>
+              <td>2024年07月</td>
+              <td class="name">2024年（第十届）全国大学生统计建模大赛</td>
+              <td>一等奖</td>
+              <td><span class="badge province">省级</span></td>
+            </tr>
+            <tr>
+              <td>2025年08月</td>
+              <td class="name">第11届全国大学生金融挑战赛（东方财富杯）</td>
+              <td>三等奖</td>
+              <td><span class="badge province">省级</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <section class="intro">
+  <section class="skills">
     <div class="container">
-      <h2>Relevant Links</h2>
-      <div class="link-item">
-        <p>1. <a href="#">劈波斩浪再前进 踔厉风行谱新篇</a></p>
-        <p>2. <a href="#">辽大师生在首届全国大学生红色金融创新创业大赛斩获佳绩！</a></p>
+      <h2>其他技能</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="icon">💻</div>
+          <h3>计算机技能</h3>
+          <p>熟练使用 Word、PPT 完成文档撰写与演示材料制作；精通 Excel，熟练运用 Vlookup 等函数进行数据处理；掌握 Visio 绘制流程图。</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="icon">🤖</div>
+          <h3>AI 大模型工具</h3>
+          <p>熟练使用豆包、Kimi 辅助办公与信息整理；可运用 ChatGPT 等海外大模型开展资料研读、文本提炼工作。</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="icon">📊</div>
+          <h3>金融终端与资讯平台</h3>
+          <p>熟练操作同花顺 iFinD、Choice、萝卜投研、慧博智能策略终端；熟悉知识星球、东方财富网站、巨潮资讯网等资讯平台。</p>
+        </div>
+
       </div>
-      <p style="margin-top:20px;font-size:14px;color:var(--muted);">Site last updated 2026‑08‑02 | <a href="#">Sitemap</a></p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2>联系方式</h2>
+      <p class="intro-line">如果你对我的项目或研究感兴趣，或者有任何交流与合作的想法，欢迎随时联系我。</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <span class="label">电话</span>
+          <a href="tel:18181582620">18181582620</a>
+        </div>
+        <div class="contact-item">
+          <span class="label">邮箱</span>
+          <a href="mailto:kunhonghe@126.com">kunhonghe@126.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="label">About me</span>
+          <a href="https://alfred-meijiu.github.io/" target="_blank" rel="noopener">alfred-meijiu.github.io</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    © 2026 Kunhong He (Alfred)
+    © 2026 何坤洪 · 用数据与精算理解世界
   </footer>
+
 </body>
 </html>
